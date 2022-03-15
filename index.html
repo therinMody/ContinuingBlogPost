@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Getting Started with GraphQL and Apollo</title>
+    <title>Continuing with GraphQL and Apollo</title>
 </head>
 
 <body>
 
     <div id="header">
-        <h1>Getting Started with GraphQL and Apollo.</h1>
-        <h3><i>Free tutorial for developing a GraphQL web application.</i></h3>
+        <h1>Continuing with GraphQL and Apollo.</h1>
+        <h3><i>Free tutorial for developing a GraphQL web application. Part 2</i></h3>
     </div>
 
     <div id="videoContent">
-        <iframe id="video" src="https://www.youtube.com/embed/6m6xHDhf-VQ" allowfullscreen></iframe>
+        <iframe id="video" src="https://www.youtube.com/embed/gHXsvDkK1JE" allowfullscreen></iframe>
     </div>
 
     <div id="authorTag">
@@ -34,36 +34,18 @@
             <p class="content">
                 Welcome to my tutorial on developing a full stack GraphQL application with Apollo technologies.
                 <br><br>
-                Our application will contain one
-                simple feature, fetching data from the sports data io API and display it on our screen.
+                We will add another feature to our application that displays Fantasy point leaders for a given date.
+                You will learn how to make GraphQL queries with arguments.
+                This is a completely free tutorial and requires no purchase at any time.
                 <br><br>
                 Here is the final outcome we aim to achieve:
                 <br><br>
-                <img class="formatImage" src="/GettingStartedBlogPost/images/finalOutcome.png" alt="final-product" />
+                <img class="formatImage" src="/images/1.jpg" alt="final-product" />
 
                 <br><br>
 
-                When we build this feature, we will take a “schema-first” design approach. There are three major steps
-                in using the schema-first design approach:
+                The topics we will cover are GraphQL queries with arguments and the React useQuery hook with arguments.
                 <br><br>
-            <div class="indent">
-                1. Define the Schema: We identify the data our application will need, and position our schema to
-                retrieve the data.
-                <br><br>
-                2. Server: The server will retrieve the data from our API and pass it along to the Client side of our
-                application.
-                <br><br>
-                3. Client: The client will call on the server to retrieve the data and then render it to our screen.
-            </div>
-
-            <br><br>
-            This application will be written with Node.js on the backend and React on the frontend. If you are
-            unfamiliar with these, don’t be alarmed. I have provided a Git repository for you to have an initial
-            starting point and I will detail each step of the development process. This tutorial is designed to be a
-            good start at becoming familiar with React and Node.js. However, it will mainly focus on the glory of
-            using GraphQL with Apollo.
-
-            <br><br>
 
             <div class="note">
                 <h2>Note: </h2>
@@ -110,7 +92,7 @@
                     b. Once logged in, on the main page select “API Free Trail” button <br>
                 </div>
             </div>
-            <img class="formatImage" src="/GettingStartedBlogPost/images/sportsdata.png" alt="sport-data site" />
+            <img class="formatImage" src="/images/1-5.jpg" alt="sport-data site" />
             <div class="indent">
                 <div class="indent">
                     c. Once taken to the Free Trail Form <br>
@@ -120,6 +102,19 @@
                         iii. Click submit <br>
                     </div>
 
+                </div>
+            </div>
+            <br />
+
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>Completion of “Getting Started with GraphQL and Apollo” is preferred but not required.
+                            This tutorial can be found here:
+                            <a href="https://therinmody.github.io/GettingStartedBlogPost/">Getting Started with GraphQL
+                                and Apollo</a>
+                        </i></p>
                 </div>
             </div>
 
@@ -141,9 +136,11 @@
                 In this section, we setup the project and use the Node package manager (npm) to install the packages our
                 app will require to run.
                 <br><br>
+                I have preconfigured a GitHub repository to make this process as enjoyable as possible for you
+                <br><br>
                 Feel free to choose whatever IDE you prefer, I will be using VS code.
                 <br><br>
-                Let’s get to it!
+                Let’s begin!
                 <br><br>
                 <b>1.</b> Clone the git Repository
                 <br>
@@ -153,51 +150,18 @@
                 c. To clone the starting repository, enter the command: <br>
                 <br>
                 <div class="code">
-                    <pre><code>git clone https://github.com/therinMody/NFLTeams-Starting-Repo.git</code></pre>
+                    <pre><code>git clone https://github.com/therinMody/NFLTeams-Starting-Repo2.git</code></pre>
                 </div>
                 <br>
-                d. Open the folder <br>
-                <br>
-            </div>
-
-
-            <b>2.</b> Set up the client directory. <br>
-            <br>
-            <div class="indent">
-                a. Change to the client directory<br> <br>
-                /NFLTeams-Starting-Repo/client <br><br>
-                b. Enter the following commands: <br><br>
-
-                <div class="code">
-                    <code>npm install</code> <br>
-                    <code>npm start</code>
-                </div>
-                <br>
-                c. The client app will open in your browser, and be just a blank grey-black screen. <br>
-                d. Back in the terminal, press
-                <br><br>
-                <div class="code">
-                    ctrl + c
-                </div>
+                d. Open the folder "NFLTeams-Starting-Repo2" in your IDE. <br>
                 <br>
             </div>
-            <div class="note">
-                <h2>Note: </h2>
 
-                <div class="noteContent">
-                    <p><i>This is how to shut down the client application.</i></p>
-                </div>
-            </div>
-
-
-
-            <br>
-
-            <b>3.</b> Set up the server directory. <br><br>
+            <b>2.</b> Set up the server directory. <br><br>
 
             <div class="indent">
                 a. Change to the server directory <br><br>
-                /NFLTeams-Starting-Repo/server <br><br>
+                /NFLTeams-Starting-Repo2/server <br><br>
                 b. Enter the following commands: <br><br>
 
                 <div class="code">
@@ -205,7 +169,8 @@
                     <code>npm start</code>
                 </div>
                 <br>
-                c. Nothing will happen because we need to develop the server code still! <br>
+                c. You will see this message in the console<br>
+                <img class="formatImage" src="/images/2.jpg" alt="serverMessage" /> <br>
                 d. Back in the terminal, press
                 <br><br>
                 <div class="code">
@@ -221,6 +186,61 @@
                 </div>
             </div>
 
+            <br>
+
+            <b>3.</b> Set up your environment variable<br>
+            <br>
+            <div class="indent">
+                a. Create a file, <b>
+                    <.env>
+                </b> in the /server directory<br> <br>
+                b. In the /server/.env file, Code this: <br><br>
+                <img class="formatImage" src="/images/3.jpg" alt=".envFile" /> <br>
+                <br><br>
+            </div>
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>Replace the hash marks with your API Key. If logged in and signed up for free trial, the API
+                            key is found here:</i></p>
+                    <img class="formatImage" src="/images/4.jpg" alt="sport-data-API-key" /> <br>
+                </div>
+            </div>
+
+            <br>
+
+            <b>4.</b> Set up the client directory. <br>
+            <br>
+            <div class="indent">
+                a. Change to the client directory<br> <br>
+                /NFLTeams-Starting-Repo2/client <br><br>
+                b. Enter the following commands: <br><br>
+
+                <div class="code">
+                    <code>npm install</code> <br>
+                    <code>npm start</code>
+                </div>
+                <br>
+                c. The client app will open in your browser. You will see the header, the use case from "Getting
+                Started with GraphQL and Apollo", and a menu. <br><br>
+                d. Back in the terminal, press
+                <br><br>
+                <div class="code">
+                    ctrl + c
+                </div>
+                <br>
+            </div>
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>This is how to shut down the client application.</i></p>
+                </div>
+            </div>
+
+            <br>
+
             </p>
 
         </div>
@@ -229,126 +249,51 @@
 
         <div id="schema" class="section">
             <h2 class="sectionHeader">
-                Developing the Schema
+                Adding our new Queries to the Server
             </h2>
 
             <hr>
 
             <p class="content">
-                A GraphQL schema is a representation of the data. Here we specify the data requirements for our user
-                interface. A schema also defines queries and mutations to perform create, update, read, or delete
-                functions (CRUD functions).
-                <br><br>
-                In this tutorial, we will only focus on queries that read data from an API.
-                So now you have an idea what a schema does. Let us walk through the process of defining one.
+                Before we code any more, we will go through the information we need to extract from our data API
+                endpoints.
                 <br><br>
 
-                <b>1.</b> Create file <b>schema.js</b> in the /server/src/ folder.
-                <br><br>
-                <img src="/GettingStartedBlogPost/images/schemaFile.png" alt="schemaPlacement" />
-                <br><br>
-
-                <b>2.</b> We will require the gql template literal from Apollo server. <br>
+                <b>1.</b> We get the season from our user<br>
             <div class="indent">
-                a. Code this: <br>
+                a. This comes prebuilt into the starting repo <br>
             </div>
-            <img src="/GettingStartedBlogPost/images/gql.png" alt="import GQL" />
+            <br>
+            <b>2.</b> The season is sent to the https://api.sportsdata.io/v3/nfl/scores/json/Schedules/{SEASON}
+            endpoint, which returns all the game dates for the season.
             <br><br>
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>The { gql } means we destructure the gql template literal from Apollo Server. Basically, it is
-                            the extraction of a specific library in a data set. You will see these kind of shenanigans
-                            multiple times
-                            in this tutorial.</i></p>
-                </div>
-            </div>
-
+            <b>3.</b> We will display these dates to the user for selection.
+            <br><br>
+            <b>4.</b> The date is passed to the https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPoints/{DATE}
+            endpoint, which returns a list of player results for the specified date.
+            <br><br>
+            <b>5.</b> We will display all the players onto a page so we can browse their fantasy scores for the given
+            date
             <br><br>
 
-            <b>3.</b> Let’s create a variable to store our type definitions. <br><br>
-            <div class="indent">
-                a. Code this
-            </div>
-            <img src="/GettingStartedBlogPost/images/typeDefs.png" alt="typeDefs" /> <br><br>
 
             <div class="note">
                 <h2>Note: </h2>
 
                 <div class="noteContent">
-                    <p><i>- module.exports=typeDefs allows us to use the variable throughout the server directory.</i>
-                    </p>
-                    <p><i>- gql is followed by backticks `, not single quotes ‘.</i></p>
+                    <p><i>I noticed too little too late that the endpoint returns a partial list of players
+                            for the entire week. So, we will be using dates that fall on Thursday for the most accurate
+                            result.
+                            Not sure why it takes a date for a parameter but that’s on the API.
+                            But never the less, you will still learn queries with arguments.</i></p>
                 </div>
             </div>
 
             <br><br>
 
-            <b>4.</b> We are at a good point to view the json data object for NFL Teams we are going to use.<br><br>
-            <div class="indent">
-                a. Take a quick look at the
-                <a href="https://sportsdata.io/developers/api-documentation/nfl#/sports-data">Sports Data API
-                    documentation</a>
-                : the Teams (Active) is the endpoint we will be using.
-            </div>
-            <img class="formatImage" src="/GettingStartedBlogPost/images/sportsAPI.png" alt="apiEndpoint" />
-            <br><br>
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>The API key, Subscription required will be replaced with your key when you are logged in
-                            and signed up for the free trail. If you missed this step, please refer to Prerequisites
-                            section
-                            2 of this tutorial.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <b>5.</b> Create the type Team. This will contain all the data points we need from the API.<br><br>
-            <div class="indent">
-                a. Code this in your typeDefs variable
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/typeTeam.png" alt="typeTeam" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>- The data points held in type Team are exactly spelt and punctuated as the data points in
-                            the JSON object.</i></p>
-                    <p><i>- The exclamation mark following the data point means non-nullable.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <b>6.</b> Now that we can store a Team, we need a type Query to get a list of teams. This is also
-            defined in the schema.
-            <br><br>
-            <div class="indent">
-                a. Code this above the type Team in your typeDefs variable.
-            </div>
-            <img src="/GettingStartedBlogPost/images/typeQuery.png" alt="typeQuery" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>[Team] means we are retrieving a list of Teams.</i></p>
-                </div>
-            </div>
-
+            Okay, now the boring stuff is out of the way. Let's start coding on the server side.
 
             </p>
-
         </div>
 
         <br>
@@ -357,49 +302,167 @@
 
         <div id="runServer" class="section">
             <h2 class="sectionHeader">
-                Initializing the Server
+                Getting and Displaying the Games
             </h2>
 
             <hr>
 
             <p class="content">
-                Apollo Server is a phenomenal library that we are going to use to implement our server.
+                We will start by defining a Game type in our schema.
                 <br><br>
-                <b>1.</b> Navigate to the index.js file in the /server/src directory. <br>
-                <b>2.</b> We will need to use our typeDefs variable and ApolloServer.
-            <div class="indent">
-                a. Code this
-            </div>
-            <img src="/GettingStartedBlogPost/images/apolloserverImport.png" alt="importsIndex.js" />
-            <br><br>
-
-            <b>3.</b> Now we need an instance of the Apollo Server class, we will store this in a object called
-            server.<br>
-            <div class="indent">
-                a. Code this
-            </div>
-            <img src="/GettingStartedBlogPost/images/serverObject.png" alt="initServer" />
-            <br><br>
-
-
-            <b>4.</b> Now we need to call the listen method in order to start the server. We will add some dialog to
-            let us know the server is running. We will test the server to make sure it can start as well.
-            <br><br>
-            <div class="indent">
-                a. Code this below the server variable <br>
-            </div>
-            <img src="/GettingStartedBlogPost/images/serverListen.png" alt="serverListen" />
-            <div class="indent">
-                b. Go to the terminal <br>
-                c. Change directory to /NFLTeams-Starting-Repo/server <br>
-                d. Enter the command
+                <b>1.</b> Navigate to the /server/src/schema.js file. <br><br>
+                <b>2.</b> In your typeDefs definition, Code this: <br><br>
+                <img src="/images/5.jpg" alt="typeGame" />
                 <br><br>
-                <div class="code">
-                    <code>npm start</code>
+
+                <b>3.</b> Before moving on we will have to add the getGames query to the Query type, Code this:<br><br>
+                <img class="formatImage" src="/images/6.jpg" alt="getGamesSchema" />
+                <br><br>
+
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>The getGames query takes a parameter of season,
+                            which is a non-nullable int. It returns a non-nullable list of non-nullable games</i></p>
                 </div>
-                <br>
-                e. You will see your message you inserted and the server is up and running
             </div>
+            <br><br>
+            Next, we will add a function to the SportsAPI class that will reach out to the Schedules endpoint
+            <br><br>
+            <b>1.</b> Navigate to the /server/src/data/sports-api.js file.<br><br>
+            <b>2.</b> Here we add the function getGames() which takes an argument of a season,
+            and retrieves the data from the Schedules endpoint.<br><br>
+            <b>2.</b> Code this: <br><br>
+            <img class="formatImage" src="/images/7.jpg" alt="getGamesAPI" />
+            <br><br>
+            Lastly, we will have to resolve our data from the API call to the type Game, defined in our schema.
+            <br><br>
+            <b>1.</b> Navigate to the /server/src/data/resolvers.js file.<br><br>
+            <b>2.</b> Code this, make sure to notice the comma after the getTeams object <br><br>
+            <img class="formatImage" src="/images/8.jpg" alt="getGamesResolver" />
+            <br><br>
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>The second argument is where we enter our arguments, in this case we will need to pass the
+                            season.</i></p>
+                </div>
+            </div>
+            <br><br>
+            Before moving to the client side of our application. Let’s test the query with the help of Apollo’s glorious
+            Studio Explorer.
+            <br><br>
+            <b>1.</b> Fire up the server<br><br>
+            <div class="indent">
+                a. Go to terminal <br>
+                b. Change to the /server directory <br>
+                c. Enter <b>
+                    < npm start>
+                </b> <br>
+            </div>
+            <br>
+            <b>2.</b> Click the link in the console log <br><br>
+            <img class="formatImage" src="/images/9.jpg" alt="studioLink" />
+            <br><br>
+            Here we will enter Apollo Studio Explorer and begin to send test queries to our server.
+            If all is successful we will retrieve a list of NFL game dates back and can go play on the client side of
+            our app.
+            <br><br>
+            <b>1.</b> Go to Apollo Studio Explorer<br><br>
+            <div class="indent">
+                a. Make a free account <br>
+                b. Click New Graph in the upper right-hand corner. <br>
+                c. Enter the credentials for your new graph. <br>
+                <div class="indent">
+                    i. Name: can be anything you want. <br>
+                    ii. Graph type: must be development. <br>
+                    iii. Endpoint: leave as localhost:4000 <br>
+                </div>
+            </div>
+            <br>
+            <img class="formatImage" src="/images/10.jpg" alt="graphInfo" />
+            <br><br>
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>If your server is running, you will see a green checkmark in the endpoint input.</i></p>
+                </div>
+            </div>
+            <br><br>
+            <div class="indent">
+                e. Click "Create Graph". <br>
+                f. You will be brought to a testing suite, on the left, in the documentation tab, you will
+                see Query with Fields under it. After refreshing the page, you should see getTeams and getGames. <br>
+                <div class="indent">
+                    i. Uncheck getTeams, if it is selected. <br>
+                    ii. Click getGames, and click the plus on all of the getGames attributes. <br>
+                </div>
+            </div>
+            <br>
+            <img class="formatImage" src="/images/11.jpg" alt="docInfo" />
+            <br><br>
+            <div class="indent">
+                g. Change the variable in the bottom to 2020 and click the play button to the right of the query. Your
+                results should look like this: <br>
+            </div>
+            <br>
+            <img class="formatImage" src="/images/11-5.jpg" alt="studioResults" />
+            <br><br>
+            Congratulations, you have successfully queried with an argument. Let us display these dates in a dropdown
+            for our users to select. Onto the client, we go.
+            <br><br>
+            <b>1.</b> Create a file <b>
+                < parseDates.js>
+            </b> in /client/src/components<br><br>
+            <b>2.</b> Code this in parseDates.js<br><br>
+            <img class="formatImage" src="/images/12.jpg" alt="indexUpdate" />
+            <br><br>
+            <b>3.</b> Code this in /client/src/components/index.js<br><br>
+            <img class="formatImage" src="/images/13.jpg" alt="studioResults" />
+            <br><br>
+            <b>4.</b> Code this in /client/src/components/players.js<br><br>
+            <img class="formatImage" src="/images/14.jpg" alt="theParseDates" />
+            <br><br>
+            In Players.js we will create a query object. Call the useQuery hook with our query object and the season
+            variable. Then we will be able to display
+            the data to the page using the QueryData component.
+            <br><br>
+            <b>1.</b> Navigate to /client/src/components/parseDates.js<br><br>
+            <b>2.</b> Create a gql query object. Code this:<br><br>
+            <img class="formatImage" src="/images/15.jpg" alt="gqlObject" />
+            <br><br>
+            <b>3.</b> Execute the query, create a dates array, and begin the QueryData element. Code this:<br><br>
+            <img class="formatImage" src="/images/16.jpg" alt="useQuery" />
+            <br><br>
+            <div class="note">
+                <h2>Note: </h2>
+
+                <div class="noteContent">
+                    <p><i>the useQuery hook second parameter is where you specify the argument.</i></p>
+                </div>
+            </div>
+            <br><br>
+            <b>4.</b> We need some logic to add a date to the dates array.
+            There can be two games on the same day so, we have to filter duplicates.
+            Since the API is a little funky. We are just taking Thursdays for a more accurate result.
+            Code this:<br><br>
+            <img class="formatImage" src="/images/17.jpg" alt="datesArray" />
+            <br><br>
+            <b>5.</b> Okay, brutal a lot of coding, but I won’t make you redo this kind of logic again.
+            Let’s throw it in a dropdown and use some state hooks. Code this:<br><br>
+            <img class="formatImage" src="/images/18.jpg" alt="mapDates" />
+            <br><br>
+            <b>6.</b> Add the functionality. Code this:<br><br>
+            <img class="formatImage" src="/images/19.jpg" alt="dateFunctions" />
+            <br><br>
+            The result is here. If you wish, start your client and server and you will see:
+            <br><br>
+            <img class="formatImage" src="/images/20.jpg" alt="result1" />
+            <br><br>
+
             </p>
 
         </div>
@@ -408,541 +471,129 @@
 
         <div id="extendRest" class="section">
             <h2 class="sectionHeader">
-                Extending the Rest API
+                Getting and Displaying the Players
             </h2>
 
             <hr>
 
             <p class="content">
-                Okay, so we have developed the server! However, it doesn’t really do much currently. Let us access
-                the data from our friends at Sports Data io.
+                Now that the user can select a date, it is time for them to be able to see the query results for that
+                day.
+                There was way too much react coding in the last section so,
+                I have taken the liberty of adding most of this to the starting repo.
                 <br><br>
-                <b>1.</b> In the /server/src folder, create a folder called “data”.<br>
-
-                <b>2.</b> In the newly created data folder, create a file called “sports-api.js”. <br>
-
-                <img src="/GettingStartedBlogPost/images/dataFolder.png" alt="dataFolder" />
-
+                We will start by defining the player type.
                 <br><br>
+                <b>1.</b> Navigate to the /server/src/schema.js file.<br><br>
 
-                <b>3.</b> Here we extend the RestDataSource class to use it for our needs. We call super() to initialize
-                a
-                RestDataSource object and assign the baseURL to point to our sports data API. The base URL is: <br>
+                <b>2.</b> Code this: <br><br>
 
-            <div class="indent">
-                a. Code this
-            </div>
-            <img src="/GettingStartedBlogPost/images/sportsAPIClass.png" alt="sportsAPIClass" />
-            <br><br>
+                <img class="formatImage" src="/images/21.jpg" alt="typePlayer" />
 
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>- We use RESTDataSource from the Apollo-datasource-rest package.</i></p>
-                    <p><i>- We must export this SportsAPI class to use it throughout the server.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="indent">
-                b. Now we need a function in our SportsAPI class to return the list of Teams. Code this into the
-                SportsAPI class. Code this
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/getTeamsEndpoint.png" alt="getTeams" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>We are making a call to the /Teams data API endpoint.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="indent">
-                c. If you noticed “process.env.REACT_APP_SPORTS_DATA_API_KEY”, congratulations. You are rewarded
-                with how to set up an environment variable. This is a security precaution and this step is highly
-                recommended.
-                <br><br>
-                <div class="indent">
-                    i. Create a file, “.env” in the /server directory.
-                    ii. In the .env file, code this
-                </div>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/envKey.png" alt="APIKEY" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>Replace the hash marks with your API Key. If logged in and signed up for free trial, the API
-                            key is found here:</i></p>
-                </div>
-                <img class="formatImage" src="/GettingStartedBlogPost/images/circledAPI.png" alt="KeyLocation" />
-            </div>
-
-            <br><br>
-
-            <div class="indent">
-                <div class="indent">
-                    iii. Go back to sports-data.js, and code this (line #2)
-                </div>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/importenv.png" alt="envImport" />
-            </p>
-
-        </div>
-
-        <br>
-
-        <div id="resolver" class="section">
-            <h2 class="sectionHeader">
-                Resolver
-            </h2>
-
-            <hr>
-
-            <p class="content">
-                Glorious, we have a call to our data API endpoint and a schema to hold that data. But, believe it or
-                not we require a middle man. A peacekeeper if you will. This is where a resolver comes into the
-                project. A resolver is a function that will transfer the data received from the API call to the type
-                object (in our case, type Team) defined in our schema.
-                <br> Let us define the resolver!
-                <br><br>
-                <b>1.</b> Create a file in the /server/src directory called “resolvers.js”<br>
-                <b>2.</b> In resolvers.js, code this<br>
-                <img src="/GettingStartedBlogPost/images/resolversObject.png" alt="resolvers" />
                 <br><br>
 
-                <b>3.</b> To create a resolver for our getTeams field, we add a Query key to the resolver’s object. The
-                Query key will hold a getTeams value to call our data.<br>
+                <b>3.</b> Add a query to the Query object. Code this:<br><br>
+
+                <img class="formatImage" src="/images/22.jpg" alt="playerQuery" />
+                <br><br>
+
+                Next, we will add a function to the SportsAPI class that fetches fantasy data for a certain date.
+                <br><br>
+                <b>1.</b> Navigate to the /server/src/sports-api.js file.<br><br>
+
+                <b>2.</b> To retrieve info from Daily fantasy points endpoint. Code this: <br><br>
+
+                <img class="formatImage" src="/images/23.jpg" alt="fantasyEndpoint" />
+                <br><br>
+
+                Lastly, we have to resolve our data.
+                <br><br>
+                <b>1.</b> Navigate to the /server/src/resolvers.js file.<br><br>
+
+                <b>2.</b> Code this: <br><br>
+
+                <img class="formatImage" src="/images/23-5.jpg" alt="resolver" />
+                <br><br>
+
+                Time to test our new query with Apollo Studio Explorer.
+                <br><br>
+                <b>1.</b> Start your server in the terminal.<br><br>
             <div class="indent">
-                a. Code this into the resolvers variable
-            </div>
-            <img src="/GettingStartedBlogPost/images/resolverjuice.png" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>The first parameter is the returned value of the resolver for this field’s parent. However,
-                            since that is not necessary here, we use a single underscore to mark it as null. The second
-                            parameter is the args value, this is useful when querying with specific arguments, again not
-                            necessary, so this time we mark it with two underscores. The third parameter is our context
-                            value in
-                            order to execute an operation. We will define dataSources in our next step, but spoiler
-                            alert, it is
-                            our SportsAPI class.</i></p>
-                </div>
-            </div>
-            </p>
-
-        </div>
-
-        <br>
-
-        <div id="serverFinish" class="section">
-            <h2 class="sectionHeader">
-                Finshing up the Server
-            </h2>
-
-            <hr>
-
-            <p class="content">
-                We have completed the majority of our server! Now we just need to reap the fruit of hard work. We
-                have to pass the new information to our server object. <br><br>
-                <b>1.</b> Go to the /server/src/index.js file <br>
-                <b>2.</b> Time to tie it all together and run our server <br>
-            <div class="indent">
-                a. Code this
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/serverJuice.png" alt="serverObjectComplete" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>We bring our resolvers and SportsAPI into the file and server. Passing the resolvers object
-                            as the second parameter. For the third parameter, we create the dataSources object to use
-                            throughout
-                            the server. This dataSources object uses an inline function to return an instance of the
-                            SportsAPI
-                            class.</i></p>
-                </div>
-            </div>
-
-            <br>
-
-            <b>3.</b> Run the server. <br><br>
-            <div class="indent">
-                a. In your terminal, navigate to the /server directory <br>
-                b. Enter <br><br>
-                <div class="code">
-                    <code>npm start</code>
-                </div>
-                <br>
-            </div>
-
-            The server has started and so far, it seems exactly as it did before. However, thanks to great
-            people at Apollo, they have developed Apollo Studio Explorer. This feature actually lets us test our server
-            and ensure everything is working before moving to the client side. We will enjoy this feature as the
-            final step of our Server development.
-
-            </p>
-
-        </div>
-
-        <br>
-
-        <div id="apolloExplorer" class="section">
-
-            <h2 class="sectionHeader">
-                Using Apollo Explorer
-            </h2>
-
-            <hr>
-
-            <p class="content">
-                Here we will enter Apollo Studio Explorer and begin to send test queries to our server. If all is
-                successful we will retrieve a list of NFL Teams and can go play on the client side of our app. <br><br>
-                <b>1.</b> Go to Apollo Studio Explorer <br>
-            <div class="indent">
-                a. Found here
-                <a href="https://studio.apollographql.com/dev">Apollo Studio Explorer</a> <br>
-                b. Make a free account <br>
-                c. Click New Graph in the upper right-hand corner <br>
-                d. Enter the credentials for your new graph <br><br>
-                <div class="indent">
-                    i. Name: can be anything you want <br>
-                    ii. Graph type: must be development <br>
-                    iii. Endpoint: leave as localhost:4000 <br><br>
-                </div>
-            </div>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>If your server is running, you will see a green checkmark in the endpoint input.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="indent">
-                e. Click “Create Graph” <br>
-                f. You will be brought to a testing suite, on the left, in the Documentation tab, you will see Query
-                with Fields under it. Nice! getTeams returning a list of Teams is there! <br>
-                g. Click getTeams. <br>
-                i. It’ll open up it’s attributes. <br>
-                h. We want them all, so click the plus on all of them. <br>
-            </div>
-            <img src="/GettingStartedBlogPost/images/allAtts.png" alt="Atts" /> <br><br>
-            <div class="indent">
-                i. You might have noticed they are being added to the query, click the play button. <br>
-            </div>
-
-            <img class="formatImage" src="/GettingStartedBlogPost/images/executeExplorer.png" alt="explorer" /> <br><br>
-
-            <div class="indent">
-                j. Ensure the data received looks like NFL team data. <br>
-            </div>
-
-            <img class="formatImage" src="/GettingStartedBlogPost/images/explorerresults.png" alt="explorerResults" /> <br><br>
-
-            Perfect! Our server runs and retrieves the data will need! Now we can move onto the client side of
-            our application and display this data in much more appealing way.
-            </p>
-
-        </div>
-
-        <br>
-
-        <div id="client" class="section">
-            <h2 class="sectionHeader">
-                Starting the Client side
-            </h2>
-
-            <hr>
-
-            <p class="content">
-                We have defined our schema, developed our server, and now we get to finish up with the client. The
-                client side uses React. To make this tutorial focus more on GraphQL and Apollo some of the React
-                components are already in the starting repository.<br>
-                Let’s begin.<br><br>
-
-                <b>1.</b> Go to /client/src/index.js<br><br>
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>There is a index.js in the pages folder as well. Make sure to click /src/index.js and avoid
-                            the
-                            pages folder.</i></p>
-                </div>
+                a. Be in the server directory. <br>
+                b. Enter <b>
+                    < npm start>
+                </b>. <br>
             </div>
             <br>
-            <b>2.</b> In index.js that starting code is the ReactDom render method that will attach to the root div of
-            the
-            html page. Let’s use Apollo to connect our client side to our server side. We need to create an Apollo
-            client variable. This client object will hold the uri of our server and a cache for faster load
-            times.<br><br>
+            <b>2.</b> Click the link in the console to go to Apollo Studio Explorer.<br><br>
+            <b>3.</b> Go to the graph you created when testing getGames.<br><br>
+            <b>4.</b> Refresh the page and you should now see getFantasyStats under Fields.<br><br>
             <div class="indent">
-                a. Code this
+                a. Click the plus on getFantasyStats and all of its attributes. <br>
             </div>
-            <img src="/GettingStartedBlogPost/images/clientObj.png" alt="client" />
-            <br><br>
-
-
-            <b>3.</b> We have to pass our client to the ApolloProvider. <br><br>
-            <div class="indent">
-                a. Code this
-            </div>
-            <img src="/GettingStartedBlogPost/images/apolloProvider.png" alt="AP" />
-
-            <br><br>
-
-
-            <b>4.</b> Now we will need to set up the url path’s for application. We will use a Reach Router.<br>
-            <div class="indent">
-                a. Navigate to /client/src/pages/index.js <br>
-                b. Code this <br>
-            </div>
-            <img src="/GettingStartedBlogPost/images/router.png" alt="router" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>We use Home here frequently, we will create this page in the next step</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <b>5.</b> In /client/src/pages folder, create a file called <b>home.js</b> <br>
-
-            <img src="/GettingStartedBlogPost/images/homePgae.png" alt="homepageFile" />
-
-            <br><br>
-
-            <b>6.</b> Now we can create an in-line variable to render a home page when at path “/” <br>
-            <div class="indent">
-                a. Code this <br>
-            </div>
-            <img src="/GettingStartedBlogPost/images/homeAtts.png" alt="home components" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>I have prebuilt the header component for you. We will build the Teams component together in
-                            the
-                            coming steps</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="indent">
-                b. There is one thing we need to add quickly and we can see what renders on our app<br>
-                <div class="indent">
-                    i. In /client/src/index.js, code this:
-                </div>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/importPages.png" alt="pagesOnAlt" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>The new additions are line 5 and line 16. Here we import our pages.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <b>7.</b> Let us run the client app and see what we have so far <br>
-            <div class="indent">
-                a. In terminal, navigate to /NFLTeams-Starting-Repo/client <br>
-                b. Enter <br>
-                <div class="indent">
-                    i. npm start
-                </div>
-                c. You will see the page empty with its header.
-            </div>
-
-
-            <img class="formatImage" src="/GettingStartedBlogPost/images/header.png" alt="header" />
-
-            <br><br>
-
-            <b>8.</b> In the home.js page, we imported Teams. We need to build that and we will be able to see our list
-            of
-            NFL Teams.
-            <br><br>
-            <div class="indent">
-                a. Go to /client/src/components/teams.js
-            </div>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>This is a standard starting template for a React component</i></p>
-                </div>
-            </div>
-            </p>
-
-        </div>
-
-        <br>
-
-        <div id="useQuery" class="section">
-
-            <h2 class="sectionHeader">
-                The useQuery Hook
-            </h2>
-
-            <hr>
-
-            <p class="content">
-
-                The useQuery is how we tell our server to make a call to the API. We can de-structure its return object
-                to error, loading, and data. I have prebuilt a React component that will process these variables when we
-                need it. If you want to check it out it is the /client/src/components/query-data.js file. We will need
-                gql object to send, which Apollo Studio Explorer makes very easy for us. And last, but not least, we
-                display the data on the screen in a nice formatted way. To make this process painless I have pre-built
-                the team card layout, it is in the /client/src/containers/team-card.js file. <br><br>
-
-                <b>1.</b> Starting at /client/src/components/teams.js<br>
-            <div class="indent">
-                a. Code this:
-            </div>
-            <img src="/GettingStartedBlogPost/images/clientImports.png" alt="clientImports" />
-
-            <br><br>
-
-            <div class="note">
-                <h2>Note: </h2>
-
-                <div class="noteContent">
-                    <p><i>These are all the imports we are going to need.</i></p>
-                </div>
-            </div>
-
-            <br><br>
-
-            <b>2.</b> We will now build the gql query object for the useQuery hook. <br>
-
             <br>
-
-            <div class="indent">
-                a. To do this, go back to your Apollo Studio Explorer, and copy the whole code. <br>
-            </div>
-
-            <img class="formatImage" src="/GettingStartedBlogPost/images/executeExplorer.png" alt="copyQuery" />
-
+            <b>5.</b> Enter the date variable at the bottom.<br><br>
+            <img class="formatImage" src="/images/24.jpg" alt="dateVariable" />
             <br><br>
-
-            <div class="indent">
-                b. Code the query, the main bulk of this code is what we got from test suite. Pretty convenient eh. <br>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/gqlQuery.png" alt="gqlQuery" />
-
+            <b>6.</b> Click the play button and bingo, your player stats are returned successfully.<br><br>
+            <img class="formatImage" src="/images/25.jpg" alt="bigApollo" />
             <br><br>
-
-            <div class="indent">
-                c. Now that we have a TEAMS object, time to use the useQuery hook.<br> Code this: <br>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/destruc.png" alt="destrcuturedQuery" />
-
+            Onto the final step of our project, displaying the query player data. As I writing the last part I decided
+            to remove all
+            the brutal react coding for this section. This will make it go by much faster. And at the end, you will see
+            a glorious display of data
+            with pagination.
             <br><br>
-
+            <b>1.</b> Navigate to /client/src/components/parseDates.js file.<br><br>
+            <b>2.</b> Code this:<br><br>
+            <img class="formatImage" src="/images/26.jpg" alt="importPlayer" />
+            <br><br>
+            <b>3.</b> Code this:<br><br>
+            <img class="formatImage" src="/images/27.jpg" alt="usePlayer" />
+            <br><br>
             <div class="note">
                 <h2>Note: </h2>
 
                 <div class="noteContent">
-                    <p><i>The useQuery will return values to show the state of the query. If all goes well, the data
-                            object will hold our data</i></p>
+                    <p><i>I have added most of the boring stuff into the PlayerResult component already. We will be adding the query information together.</i></p>
                 </div>
             </div>
-
             <br><br>
-
-            <div class="indent">
-                d. We will create a styled div to contain our teams to a grid.
-                <div class="indent">
-                    i. Code this
-                </div>
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/sectionContainer.png" alt="sectionContainer Component" />
-
+            Next, we are going to similiar steps to what we did for the players query.
             <br><br>
-
-            <div class="indent">
-                e. Time to work with the QueryData, code this:
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/queryResult.png" alt="queryResultComponent" />
-
+            <b>1.</b> Navigate to /client/src/components/player-result.js file.<br><br>
+            <b>2.</b> Create the gql query object. Code this:<br><br>
+            <img class="formatImage" src="/images/28.jpg" alt="playerQuery" />
             <br><br>
-
             <div class="note">
                 <h2>Note: </h2>
 
                 <div class="noteContent">
-                    <p><i>We pass our variables to the QueryData component which will return either the loading message,
-                            the
-                            error message, or the data.</i></p>
+                    <p><i>Don't forget the imports at lines 3 and 4.</i></p>
                 </div>
             </div>
-
             <br><br>
-
-            <div class="indent">
-                f. We will map the list of teams we get back to display each team on a TeamCard, code this:
-            </div>
-
-            <img src="/GettingStartedBlogPost/images/QueryDataMapped.png" alt="QueryData mapped" />
-
-            <br>
-
+            <b>3.</b> Now we can call the useQuery hook with the PLAYERS object and the date variable. Code this:<br><br>
+            <img class="formatImage" src="/images/29.jpg" alt="playerQueryHook" />
+            <br><br>
+            <b>4.</b> Import the PlayerCard container. Code this:<br><br>
+            <img class="formatImage" src="/images/30.jpg" alt="playerCardImport" />
+            <br><br>
+            <b>5.</b> Time to display the query data, we will use our QueryData component to do this. In between the break tags, Code this:<br><br>
+            <img class="formatImage" src="/images/31.jpg" alt="playerCardQueryData" />
+            <br><br>
             <div class="note">
                 <h2>Note: </h2>
 
                 <div class="noteContent">
-                    <p><i>The team card takes the team object and the team key as parameters. The team key because when
-                            mapping you need to send a unique value.</i></p>
+                    <p><i>The two things happening in this block are as follows: <br>
+                        1. The data is mapped and ten players are added to an array. 
+                        The players depend on the page. <br>
+                        2. The array is mapped to display the player and their attributes for the date.</i></p>
                 </div>
             </div>
+
             </p>
-
 
         </div>
 
@@ -957,14 +608,13 @@
             <hr>
 
             <p class="content">
-                Congratulations you have finished all three steps when building a Web application with a schema-first
-                approach. Time to run both the server and client to see the finished product of our application.
+                Congratulations you have developed a full stack GraphQL application using Apollo technologies. You now can run the application and view our creation.
                 <br><br>
 
                 <b>1.</b> Start the server.
             <div class="indent">
                 a. Change to the server directory. <br>
-                /NFLTeams-Starting-Repo/server <br>
+                /NFLTeams-Starting-Repo2/server <br>
                 b. Enter: <br><br>
                 <div class="code">
                     <code>npm start</code>
@@ -975,7 +625,7 @@
             <b>2.</b> Set up the client directory.
             <div class="indent">
                 a. Change to the client directory. <br>
-                /NFLTeams-Starting-Repo/client <br>
+                /NFLTeams-Starting-Repo2/client <br>
                 b. Enter: <br><br>
                 <div class="code">
                     <code>npm start</code>
@@ -983,8 +633,9 @@
                 <br><br>
             </div>
 
-            And there you have it. All active NFL teams displayed beautifully on our home page.
-            Thank you so much for reading this tutorial and I hope you enjoyed learning about GraphQL and Apollo
+            And there you have it. An application to browse NFL Teams or view Fantasy Leaders for a given date. <br><br>
+            <img class="formatImage" src="/images/32.jpg" alt="finalResult" /><br><br>
+            Thank you so much for reading this tutorial and I hope you enjoyed learning about GraphQL and how Apollo is an absolute asset for its development. <br><br>
             </p>
 
         </div>

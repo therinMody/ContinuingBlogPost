@@ -11,18 +11,18 @@ hr {
 }
 
 iframe {
-    border-color: #80b2e0;
+    border-color: #501B1D;
 }
 
 #header {
     font-size: larger;
     font-family: Helvetica, Arial, sans-serif;
     color: #f3f6f4;
-    background-color: #0b5394;
+    background-color: #501B1D;
     padding: 1%;
     border-radius: 1em;
     margin-bottom: 3%;
-    border: 5px solid #80b2e0;
+    border: 5px solid #ADADAD;
     position: fixed;
     height: 115px;
     width: 96%;
@@ -53,10 +53,10 @@ iframe {
 #blogContent {
     float: left;
     width: 47%;
-    background-color: #80b2e0;
+    background-color: #501B1D;
     padding: 1%;
     border-radius: 1em;
-    border: 5px solid #0b5394;
+    border: 5px solid #ADADAD;
     margin-top: 175px;
 }
 
@@ -71,7 +71,7 @@ iframe {
 }
 
 .sectionHeader {
-    color: #0b5394;
+    color: #2E1114;
 }
 
 .formatImage {
@@ -80,11 +80,11 @@ iframe {
 }
 
 .note {
-    background-color: #0b5394;
+    background-color: #2E1114;
     padding: 2%;
     border-radius: 1em;
     color: #f3f6f4;
-    border: 2px solid #80b2e0;
+    border: 2px solid #ADADAD;
 }
 
 .noteContent {
@@ -107,7 +107,7 @@ a:hover {
 
 .code {
     color: #f3f6f4;
-    background-color: #0b5394;
+    background-color: #2E1114;
     padding: 1%;
     border-radius: 1em;
     margin-right: 5%;
