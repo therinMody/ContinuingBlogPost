@@ -5,6 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script>
+        /*
+        *The lazy mans way to change a pages format
+        */
+        function changeFormat() {
+            
+
+            //hide right side stuff
+            document.getElementById("videoContent").style.display = "none";
+            document.getElementById("authorTag").style.display = "none";
+            document.getElementById("hideVideo").style.display = "none";
+
+            //change the content to fill whole page
+            document.getElementById("blogContent").style.width = "80%";
+            document.getElementById("blogContent").style.marginLeft = "10%";
+            document.getElementById("blogContent").style.marginRight = "10%";
+
+            //tell the user how to get back
+            window.alert("Refresh the page if you regret removing the video");
+        }
+    </script>
     <title>Continuing with GraphQL and Apollo</title>
 </head>
 
@@ -21,6 +42,12 @@
 
     <div id="authorTag">
         <h2><i>by: Therin Mody</i></h2>
+    </div>
+
+    <div id="hideVideo">
+        <button id="button" onclick="changeFormat()">
+            Hide Youtube Video
+        </button>
     </div>
 
     <div id="blogContent">

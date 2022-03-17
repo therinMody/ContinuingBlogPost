@@ -49,6 +49,19 @@ iframe {
     text-align: right;
 }
 
+#hideVideo {
+    position: fixed;
+    margin-top: 750px;
+    margin-left: 65%;
+}
+
+#button {
+    background-color: #501B1D;
+    color: #FFFFFF;
+    width: 150%;
+    padding: 1%;
+    font-size: large;
+}
 
 #blogContent {
     float: left;
