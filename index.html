@@ -36,7 +36,7 @@
     </div>
 
     <div id="videoContent">
-        <iframe id="video" src="https://www.youtube.com/embed/gHXsvDkK1JE" allowfullscreen></iframe>
+        <iframe id="video" src="https://www.youtube.com/embed/I0UnpT3fYJQ" allowfullscreen></iframe>
     </div>
 
     <div id="authorTag">
@@ -66,7 +66,7 @@
                 <br><br>
                 Here is the final outcome we aim to achieve:
                 <br><br>
-                <img class="formatImage" src="/images/1.jpg" alt="final-product" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/1.jpg" alt="final-product" />
 
                 <br><br>
 
@@ -118,7 +118,7 @@
                     b. Once logged in, on the main page select “API Free Trail” button <br>
                 </div>
             </div>
-            <img class="formatImage" src="/images/1-5.jpg" alt="sport-data site" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/1-5.jpg" alt="sport-data site" />
             <div class="indent">
                 <div class="indent">
                     c. Once taken to the Free Trail Form <br>
@@ -196,7 +196,7 @@
                 </div>
                 <br>
                 c. You will see this message in the console<br>
-                <img class="formatImage" src="/images/2.jpg" alt="serverMessage" /> <br>
+                <img class="formatImage" src="/ContinuingBlogPost/images/2.jpg" alt="serverMessage" /> <br>
                 d. Back in the terminal, press
                 <br><br>
                 <div class="code">
@@ -221,7 +221,7 @@
                     <.env>
                 </b> in the /server directory<br> <br>
                 b. In the /server/.env file, Code this: <br><br>
-                <img class="formatImage" src="/images/3.jpg" alt=".envFile" /> <br>
+                <img class="formatImage" src="/ContinuingBlogPost/images/3.jpg" alt=".envFile" /> <br>
                 <br><br>
             </div>
             <div class="note">
@@ -230,7 +230,7 @@
                 <div class="noteContent">
                     <p><i>Replace the hash marks with your API Key. If logged in and signed up for free trial, the API
                             key is found here:</i></p>
-                    <img class="formatImage" src="/images/4.jpg" alt="sport-data-API-key" /> <br>
+                    <img class="formatImage" src="/ContinuingBlogPost/images/4.jpg" alt="sport-data-API-key" /> <br>
                 </div>
             </div>
 
@@ -342,7 +342,7 @@
                 <br><br>
 
                 <b>3.</b> Before moving on we will have to add the getGames query to the Query type, Code this:<br><br>
-                <img class="formatImage" src="/images/6.jpg" alt="getGamesSchema" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/6.jpg" alt="getGamesSchema" />
                 <br><br>
 
             <div class="note">
@@ -360,13 +360,13 @@
             <b>2.</b> Here we add the function getGames() which takes an argument of a season,
             and retrieves the data from the Schedules endpoint.<br><br>
             <b>2.</b> Code this: <br><br>
-            <img class="formatImage" src="/images/7.jpg" alt="getGamesAPI" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/7.jpg" alt="getGamesAPI" />
             <br><br>
             Lastly, we will have to resolve our data from the API call to the type Game, defined in our schema.
             <br><br>
             <b>1.</b> Navigate to the /server/src/data/resolvers.js file.<br><br>
             <b>2.</b> Code this, make sure to notice the comma after the getTeams object <br><br>
-            <img class="formatImage" src="/images/8.jpg" alt="getGamesResolver" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/8.jpg" alt="getGamesResolver" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -390,7 +390,7 @@
             </div>
             <br>
             <b>2.</b> Click the link in the console log <br><br>
-            <img class="formatImage" src="/images/9.jpg" alt="studioLink" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/9.jpg" alt="studioLink" />
             <br><br>
             Here we will enter Apollo Studio Explorer and begin to send test queries to our server.
             If all is successful we will retrieve a list of NFL game dates back and can go play on the client side of
@@ -408,7 +408,7 @@
                 </div>
             </div>
             <br>
-            <img class="formatImage" src="/images/10.jpg" alt="graphInfo" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/10.jpg" alt="graphInfo" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -428,14 +428,14 @@
                 </div>
             </div>
             <br>
-            <img class="formatImage" src="/images/11.jpg" alt="docInfo" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/11.jpg" alt="docInfo" />
             <br><br>
             <div class="indent">
                 g. Change the variable in the bottom to 2020 and click the play button to the right of the query. Your
                 results should look like this: <br>
             </div>
             <br>
-            <img class="formatImage" src="/images/11-5.jpg" alt="studioResults" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/11-5.jpg" alt="studioResults" />
             <br><br>
             Congratulations, you have successfully queried with an argument. Let us display these dates in a dropdown
             for our users to select. Onto the client, we go.
@@ -444,13 +444,13 @@
                 < parseDates.js>
             </b> in /client/src/components<br><br>
             <b>2.</b> Code this in parseDates.js<br><br>
-            <img class="formatImage" src="/images/12.jpg" alt="indexUpdate" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/12.jpg" alt="indexUpdate" />
             <br><br>
             <b>3.</b> Code this in /client/src/components/index.js<br><br>
-            <img class="formatImage" src="/images/13.jpg" alt="studioResults" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/13.jpg" alt="studioResults" />
             <br><br>
             <b>4.</b> Code this in /client/src/components/players.js<br><br>
-            <img class="formatImage" src="/images/14.jpg" alt="theParseDates" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/14.jpg" alt="theParseDates" />
             <br><br>
             In Players.js we will create a query object. Call the useQuery hook with our query object and the season
             variable. Then we will be able to display
@@ -458,10 +458,10 @@
             <br><br>
             <b>1.</b> Navigate to /client/src/components/parseDates.js<br><br>
             <b>2.</b> Create a gql query object. Code this:<br><br>
-            <img class="formatImage" src="/images/15.jpg" alt="gqlObject" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/15.jpg" alt="gqlObject" />
             <br><br>
             <b>3.</b> Execute the query, create a dates array, and begin the QueryData element. Code this:<br><br>
-            <img class="formatImage" src="/images/16.jpg" alt="useQuery" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/16.jpg" alt="useQuery" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -475,18 +475,18 @@
             There can be two games on the same day so, we have to filter duplicates.
             Since the API is a little funky. We are just taking Thursdays for a more accurate result.
             Code this:<br><br>
-            <img class="formatImage" src="/images/17.jpg" alt="datesArray" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/17.jpg" alt="datesArray" />
             <br><br>
             <b>5.</b> Okay, brutal a lot of coding, but I won’t make you redo this kind of logic again.
             Let’s throw it in a dropdown and use some state hooks. Code this:<br><br>
-            <img class="formatImage" src="/images/18.jpg" alt="mapDates" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/18.jpg" alt="mapDates" />
             <br><br>
             <b>6.</b> Add the functionality. Code this:<br><br>
-            <img class="formatImage" src="/images/19.jpg" alt="dateFunctions" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/19.jpg" alt="dateFunctions" />
             <br><br>
             The result is here. If you wish, start your client and server and you will see:
             <br><br>
-            <img class="formatImage" src="/images/20.jpg" alt="result1" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/20.jpg" alt="result1" />
             <br><br>
 
             </p>
@@ -514,13 +514,13 @@
 
                 <b>2.</b> Code this: <br><br>
 
-                <img class="formatImage" src="/images/21.jpg" alt="typePlayer" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/21.jpg" alt="typePlayer" />
 
                 <br><br>
 
                 <b>3.</b> Add a query to the Query object. Code this:<br><br>
 
-                <img class="formatImage" src="/images/22.jpg" alt="playerQuery" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/22.jpg" alt="playerQuery" />
                 <br><br>
 
                 Next, we will add a function to the SportsAPI class that fetches fantasy data for a certain date.
@@ -529,7 +529,7 @@
 
                 <b>2.</b> To retrieve info from Daily fantasy points endpoint. Code this: <br><br>
 
-                <img class="formatImage" src="/images/23.jpg" alt="fantasyEndpoint" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/23.jpg" alt="fantasyEndpoint" />
                 <br><br>
 
                 Lastly, we have to resolve our data.
@@ -538,7 +538,7 @@
 
                 <b>2.</b> Code this: <br><br>
 
-                <img class="formatImage" src="/images/23-5.jpg" alt="resolver" />
+                <img class="formatImage" src="/ContinuingBlogPost/images/23-5.jpg" alt="resolver" />
                 <br><br>
 
                 Time to test our new query with Apollo Studio Explorer.
@@ -559,10 +559,10 @@
             </div>
             <br>
             <b>5.</b> Enter the date variable at the bottom.<br><br>
-            <img class="formatImage" src="/images/24.jpg" alt="dateVariable" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/24.jpg" alt="dateVariable" />
             <br><br>
             <b>6.</b> Click the play button and bingo, your player stats are returned successfully.<br><br>
-            <img class="formatImage" src="/images/25.jpg" alt="bigApollo" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/25.jpg" alt="bigApollo" />
             <br><br>
             Onto the final step of our project, displaying the query player data. As I writing the last part I decided
             to remove all
@@ -572,10 +572,10 @@
             <br><br>
             <b>1.</b> Navigate to /client/src/components/parseDates.js file.<br><br>
             <b>2.</b> Code this:<br><br>
-            <img class="formatImage" src="/images/26.jpg" alt="importPlayer" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/26.jpg" alt="importPlayer" />
             <br><br>
             <b>3.</b> Code this:<br><br>
-            <img class="formatImage" src="/images/27.jpg" alt="usePlayer" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/27.jpg" alt="usePlayer" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -589,7 +589,7 @@
             <br><br>
             <b>1.</b> Navigate to /client/src/components/player-result.js file.<br><br>
             <b>2.</b> Create the gql query object. Code this:<br><br>
-            <img class="formatImage" src="/images/28.jpg" alt="playerQuery" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/28.jpg" alt="playerQuery" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -600,13 +600,13 @@
             </div>
             <br><br>
             <b>3.</b> Now we can call the useQuery hook with the PLAYERS object and the date variable. Code this:<br><br>
-            <img class="formatImage" src="/images/29.jpg" alt="playerQueryHook" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/29.jpg" alt="playerQueryHook" />
             <br><br>
             <b>4.</b> Import the PlayerCard container. Code this:<br><br>
-            <img class="formatImage" src="/images/30.jpg" alt="playerCardImport" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/30.jpg" alt="playerCardImport" />
             <br><br>
             <b>5.</b> Time to display the query data, we will use our QueryData component to do this. In between the break tags, Code this:<br><br>
-            <img class="formatImage" src="/images/31.jpg" alt="playerCardQueryData" />
+            <img class="formatImage" src="/ContinuingBlogPost/images/31.jpg" alt="playerCardQueryData" />
             <br><br>
             <div class="note">
                 <h2>Note: </h2>
@@ -660,7 +660,7 @@
             </div>
 
             And there you have it. An application to browse NFL Teams or view Fantasy Leaders for a given date. <br><br>
-            <img class="formatImage" src="/images/32.jpg" alt="finalResult" /><br><br>
+            <img class="formatImage" src="/ContinuingBlogPost/images/32.jpg" alt="finalResult" /><br><br>
             Thank you so much for reading this tutorial and I hope you enjoyed learning about GraphQL and how Apollo is an absolute asset for its development. <br><br>
             </p>
 
